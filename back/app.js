@@ -4,6 +4,7 @@ const mongoose = require("mongoose")
 
 const app = express()
 const User = require("./models/users")
+const Sauvegarde = require('./models/sauvegardes')
 
 //CONNECTION A MONGODB
 //CONNECTION A MONGODB
@@ -60,6 +61,33 @@ async function addUser(){
     
 }
 
+async function addSauvegarde(){
+    try{
+        let sauvegarde = new Sauvegarde({
+            gameID: "1",
+            playerID: "1",
+            nom: "Thomas",
+            textNodeID: "4.2",
+            caracteristiques:[
+                {
+                nom: "Force",
+                valeur: "10"
+                },
+                {
+                nom: "Agilité",
+                valeur: "2"
+                }
+            ]
+        })
+       
+        await sauvegarde.save()
+        console.log(sauvegarde)
+    }
+    catch(err){
+        console.log(err.message)
+    }
+    
+}
 
 
 module.exports = app;

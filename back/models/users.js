@@ -10,4 +10,5 @@ const userSchema = mongoose.Schema({
     likedGames: [mongoose.SchemaTypes.ObjectId] 
 })
 
+
 module.exports = mongoose.model("User", userSchema)
