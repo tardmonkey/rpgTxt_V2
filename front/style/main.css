@@ -1,0 +1,28 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+aside {
+  border: red solid 2px;
+}
+
+main {
+  border: blue solid 2px;
+}
+
+header {
+  border: green solid 2px;
+}
+
+footer {
+  border: yellow solid 2px;
+}/*# sourceMappingURL=main.css.map */
