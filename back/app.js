@@ -1,3 +1,5 @@
+require('dotenv').config()
+console.log(process.env)
 const express = require("express")
 const mongoose = require("mongoose")
 
@@ -6,7 +8,7 @@ const User = require("./models/users")
 
 //CONNECTION A MONGODB
 //CONNECTION A MONGODB
-mongoose.connect("mongodb+srv://gfthgfth:test@cluster0.u97ok.mongodb.net/RPGtxtTests")
+mongoose.connect("mongodb+srv://" + process.env.DB_USERNAME + ":" + process.env.DB_PASSWORD + "@cluster0.u97ok.mongodb.net/RPGtxtTests")
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", () => {
@@ -59,7 +61,7 @@ async function addUser(){
     
 }
 
-addUser()
+
 
 module.exports = app;
 
